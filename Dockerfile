@@ -1,6 +1,5 @@
-FROM python:3.8-slim
-RUN mkdir /server
-ADD . /server
-WORKDIR /server
-RUN pip install -r requirements.txt
+FROM python:3
+WORKDIR /app
+COPY . /app
+RUN pip install flask
 CMD ["python", "server.py"]
